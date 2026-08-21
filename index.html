@@ -13,6 +13,26 @@
 </head>
 <body>
 
+  <!-- CURSOR CUSTOMIZADO -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">Alana<span class="nav-dot">.</span>tech</span>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" class="nav-link">Início</a></li>
+        <li><a href="#beneficios" class="nav-link">Benefícios</a></li>
+        <li><a href="#servicos" class="nav-link">Serviços</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#contato" class="nav-link">Contato</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
   <!-- HERO -->
   <section class="hero" id="inicio">
     <div class="hero-inner">
@@ -31,6 +51,9 @@
         <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
       </a>
     </div>
+    <a href="#sobre" class="scroll-down" aria-label="Rolar para baixo">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
   </section>
 
   <!-- SOBRE -->
@@ -43,6 +66,64 @@
         com design elegante, carregamento rápido e foco em atrair mais clientes.
         Cada projeto é tratado com atenção e cuidado para refletir a identidade do seu negócio.
       </p>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="beneficios" id="beneficios">
+    <div class="container">
+      <h2 class="section-title">Por que ter um site?<span class="linha-dourada"></span></h2>
+      <p class="section-sub">Veja como um site profissional transforma o seu negócio</p>
+      <div class="ben-grid">
+        <div class="ben-card reveal">
+          <div class="ben-icon"><i class="fa-solid fa-globe"></i></div>
+          <h3>Presença Online 24h</h3>
+          <p>Seu negócio nunca fecha. Clientes encontram você a qualquer hora, mesmo quando você está dormindo.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon"><i class="fa-brands fa-google"></i></div>
+          <h3>Apareça no Google</h3>
+          <p>Quando alguém pesquisa pelo seu serviço em Campo Grande, seu negócio aparece nos resultados.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon"><i class="fa-solid fa-medal"></i></div>
+          <h3>Mais Credibilidade</h3>
+          <p>Clientes confiam mais em negócios com site. Passa profissionalismo antes mesmo do primeiro contato.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3>Funciona no Celular</h3>
+          <p>100% responsivo. Qualquer cliente pode acessar do celular, tablet ou computador sem dificuldade.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <h3>Contato Direto</h3>
+          <p>Botão de WhatsApp integrado. O cliente clica e já fala com você — sem fricção, sem perder vendas.</p>
+        </div>
+        <div class="ben-card reveal">
+          <div class="ben-icon"><i class="fa-solid fa-trophy"></i></div>
+          <h3>Saia na Frente</h3>
+          <p>A maioria dos concorrentes ainda não tem site profissional. Essa é sua vantagem agora.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTADOR -->
+  <section class="contador">
+    <div class="container contador-grid">
+      <div class="contador-item">
+        <span class="contador-num" data-target="50" data-prefix="+">0</span>
+        <span class="contador-label">Sites entregues</span>
+      </div>
+      <div class="contador-item">
+        <span class="contador-num" data-target="100" data-suffix="%">0</span>
+        <span class="contador-label">Clientes satisfeitos</span>
+      </div>
+      <div class="contador-item">
+        <span class="contador-num" data-target="24" data-suffix="h">0</span>
+        <span class="contador-label">Suporte e atendimento</span>
+      </div>
     </div>
   </section>
 
@@ -70,6 +151,60 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title">Perguntas frequentes<span class="linha-dourada"></span></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-pergunta">
+            Quanto tempo leva para criar meu site?
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-resposta">
+            <p>Em média de 3 a 7 dias úteis, dependendo da complexidade do projeto. Sites simples podem ficar prontos em até 48h.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">
+            Meu site vai aparecer no Google?
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-resposta">
+            <p>Sim! Todos os sites que crio já saem otimizados para o Google (SEO). Com o tempo e as boas práticas, seu negócio vai aparecer nas buscas da sua cidade.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">
+            Preciso entender de tecnologia para ter um site?
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-resposta">
+            <p>Não precisa saber nada de tecnologia! Cuido de tudo: criação, publicação e suporte. Você só precisa me contar sobre o seu negócio.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">
+            Como funciona o processo?
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-resposta">
+            <p>É simples: você me conta sobre o seu negócio pelo WhatsApp → eu crio o layout → você aprova → publicamos online. Sem complicação!</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-pergunta">
+            Quanto custa um site?
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-resposta">
+            <p>O valor varia conforme o tipo de site e o que você precisa. Entre em contato pelo WhatsApp para receber um orçamento personalizado e sem compromisso!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTATO -->
   <section class="contato" id="contato">
     <div class="container contato-inner">
@@ -92,6 +227,11 @@
       <i class="fa-brands fa-instagram"></i> @alanatech_
     </a>
   </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5567991077340" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <script src="js/main.js"></script>
 </body>
