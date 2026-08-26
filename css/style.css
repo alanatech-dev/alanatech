@@ -180,9 +180,33 @@ img { max-width: 100%; display: block; }
 }
 .hero-content {
   position: relative; z-index: 1;
+  display: flex; flex-direction: row;
+  align-items: center; gap: 48px;
+  max-width: 1000px; width: 100%;
+  padding: 0 24px;
+}
+.hero-texto {
   display: flex; flex-direction: column;
-  align-items: center; gap: 22px;
-  max-width: 720px;
+  align-items: flex-start; gap: 22px;
+  flex: 1; text-align: left;
+}
+.hero-img-col {
+  flex: 0 0 380px;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-img-frame {
+  position: relative;
+  border-radius: 24px; overflow: hidden;
+  border: 1px solid rgba(176,128,96,.25);
+  box-shadow: 0 0 60px rgba(176,128,96,.15), 0 20px 60px rgba(0,0,0,.5);
+}
+.hero-img-frame::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(8,8,8,.5) 100%);
+}
+.hero-img {
+  width: 100%; height: auto; display: block;
 }
 .hero-tag {
   font-size: .75rem; font-weight: 700;
@@ -466,6 +490,12 @@ img { max-width: 100%; display: block; }
    RESPONSIVO
    ============================================================ */
 @media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-texto { align-items: center; text-align: center; }
+  .hero-img-col { flex: unset; width: 100%; max-width: 340px; }
   .nav-links {
     display: none; flex-direction: column; gap: 0;
     position: absolute; top: 64px; left: 0; right: 0;
