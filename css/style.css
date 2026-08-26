@@ -233,6 +233,17 @@ img { max-width: 100%; display: block; }
   font-size: 1.15rem; font-style: italic;
   color: var(--primario); margin-top: 8px;
 }
+.brilho {
+  color: var(--primario-clr);
+  text-shadow:
+    0 0 8px rgba(207,168,130,0.7),
+    0 0 20px rgba(207,168,130,0.35);
+  animation: brilho-pulse 3s ease-in-out infinite;
+}
+@keyframes brilho-pulse {
+  0%,100% { text-shadow: 0 0 8px rgba(207,168,130,0.7), 0 0 20px rgba(207,168,130,0.35); }
+  50%      { text-shadow: 0 0 14px rgba(207,168,130,1),  0 0 36px rgba(207,168,130,0.6); }
+}
 
 /* ============================================================
    BENEFÍCIOS
