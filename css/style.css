@@ -222,9 +222,7 @@ img { max-width: 100%; display: block; }
   color: var(--texto); letter-spacing: -.02em;
 }
 .hero-titulo span {
-  background: linear-gradient(135deg, var(--primario-clr), var(--primario), var(--primario-esc));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primario-clr);
 }
 .hero-sub {
   font-size: clamp(1rem, 2.5vw, 1.2rem);
