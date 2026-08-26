@@ -1,17 +1,17 @@
 /* === RESET & VARIÁVEIS === */
 :root {
-  --dourado: #c9a84c;
-  --dourado-claro: #e8c96a;
-  --dourado-escuro: #a07830;
+  --dourado: #b5826a;
+  --dourado-claro: #d4a98a;
+  --dourado-escuro: #8a5a42;
   --fundo: #0d0d0d;
   --fundo-card: #161616;
   --fundo-alt: #111111;
   --texto: #f0ece4;
-  --texto-suave: #9a9080;
+  --texto-suave: #9a8f88;
   --rosa-accent: #c4a0a0;
   --branco: #ffffff;
   --radius: 18px;
-  --sombra-dourada: 0 8px 40px rgba(201,168,76,0.18);
+  --sombra-dourada: 0 8px 40px rgba(181,130,106,0.2);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -285,7 +285,7 @@ img { max-width: 100%; display: block; }
   font-weight: 300;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, var(--dourado-claro) 0%, var(--texto) 45%, var(--dourado) 100%);
+  background: linear-gradient(135deg, var(--dourado-claro) 0%, #f5e6dc 45%, var(--dourado) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
