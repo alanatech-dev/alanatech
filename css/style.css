@@ -226,46 +226,58 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: 20px;
+  text-align: center;
+  padding: 0 24px;
 }
 
-.foto-wrapper {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin-bottom: 8px;
+.hero-pre {
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  font-weight: 300;
 }
 
-.foto-wrapper::before {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  border-radius: 50%;
-  background: conic-gradient(var(--dourado), var(--dourado-claro), var(--rosa-accent), var(--dourado));
-  animation: girar 6s linear infinite;
-  z-index: 0;
+.hero-slogan {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  color: var(--texto);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  max-width: 540px;
 }
 
-.foto-wrapper::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 50%;
-  background: var(--fundo);
-  z-index: 1;
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--dourado);
+  color: var(--dourado-claro);
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 15px 32px;
+  border-radius: 50px;
+  letter-spacing: 0.04em;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-outline:hover {
+  background: var(--dourado);
+  color: var(--fundo);
 }
 
 @keyframes girar { to { transform: rotate(360deg); } }
-
-.foto-perfil {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top center;
-}
 
 .nome {
   font-family: 'Cormorant Garamond', serif;
