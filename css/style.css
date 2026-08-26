@@ -235,6 +235,31 @@ img { max-width: 100%; display: block; }
   flex-wrap: wrap; justify-content: center;
 }
 
+/* partículas */
+.particula {
+  position: absolute; border-radius: 50%;
+  background: var(--primario-clr);
+  pointer-events: none; z-index: 0;
+  animation: flutuar linear infinite;
+}
+@keyframes flutuar {
+  0%   { transform: translateY(0) scale(1); opacity: .3; }
+  50%  { transform: translateY(-40px) scale(1.2); opacity: .7; }
+  100% { transform: translateY(0) scale(1); opacity: .3; }
+}
+
+/* entrada suave dos elementos do hero */
+.hero-tag { animation: fadeUp .7s ease both; animation-delay: .1s; }
+.hero-titulo { animation: fadeUp .7s ease both; animation-delay: .3s; }
+.hero-sub { animation: fadeUp .7s ease both; animation-delay: .5s; }
+.hero-btns { animation: fadeUp .7s ease both; animation-delay: .7s; }
+.hero-img-col { animation: fadeUp .9s ease both; animation-delay: .4s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* seta scroll */
 .scroll-down {
   color: var(--primario-clr); font-size: 1.1rem;

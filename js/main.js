@@ -26,12 +26,10 @@ hamburger?.addEventListener('click', () => {
   navLinks.classList.toggle('aberto');
 });
 
-// Fechar menu ao clicar em link
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('aberto'));
 });
 
-// Nav link ativo por seção
 function atualizarNavAtivo() {
   const secoes = ['inicio', 'beneficios', 'servicos', 'faq', 'contato'];
   let atual = '';
@@ -44,15 +42,71 @@ function atualizarNavAtivo() {
   });
 }
 
-// === SCROLL REVEAL ===
+// === PARTÍCULAS FLUTUANTES NO HERO ===
+function criarParticulas() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+  for (let i = 0; i < 28; i++) {
+    const p = document.createElement('span');
+    p.className = 'particula';
+    p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      width: ${Math.random() * 3 + 1}px;
+      height: ${Math.random() * 3 + 1}px;
+      animation-delay: ${Math.random() * 6}s;
+      animation-duration: ${Math.random() * 8 + 6}s;
+      opacity: ${Math.random() * 0.5 + 0.1};
+    `;
+    hero.appendChild(p);
+  }
+}
+criarParticulas();
+
+// === EFEITO DIGITAÇÃO NO TÍTULO ===
+function efetitoDigitacao() {
+  const titulo = document.querySelector('.hero-titulo');
+  if (!titulo) return;
+  const textoCompleto = titulo.innerHTML;
+  titulo.style.opacity = '1';
+
+  const textoSpan = titulo.querySelector('span');
+  const textoAlana = 'Alana';
+  const textoTech = textoSpan ? textoSpan.textContent : 'Tech';
+
+  titulo.innerHTML = '';
+  let i = 0;
+  let fase = 0; // 0 = Alana, 1 = Tech
+
+  function digitar() {
+    if (fase === 0) {
+      titulo.textContent = textoAlana.slice(0, i + 1);
+      i++;
+      if (i >= textoAlana.length) { fase = 1; i = 0; setTimeout(digitar, 200); return; }
+    } else {
+      const span = document.createElement('span');
+      span.textContent = textoTech.slice(0, i + 1);
+      titulo.innerHTML = textoAlana;
+      titulo.appendChild(span);
+      i++;
+      if (i >= textoTech.length) return;
+    }
+    setTimeout(digitar, 80 + Math.random() * 40);
+  }
+
+  setTimeout(digitar, 400);
+}
+efetitoDigitacao();
+
+// === SCROLL REVEAL com easing escalonado ===
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 
 document.querySelectorAll('.card, .ben-card, .reveal').forEach(el => observer.observe(el));
 
@@ -74,7 +128,7 @@ function animarContadores() {
     const target = +el.dataset.target;
     const prefix = el.dataset.prefix || '';
     const suffix = el.dataset.suffix || '';
-    const duracao = 1800;
+    const duracao = 2000;
     const inicio = performance.now();
 
     function atualizar(agora) {
@@ -94,11 +148,15 @@ document.querySelectorAll('.faq-pergunta').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.closest('.faq-item');
     const aberto = item.classList.contains('aberto');
-
-    // Fecha todos
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('aberto'));
-
-    // Abre o clicado (se não estava aberto)
     if (!aberto) item.classList.add('aberto');
   });
+});
+
+// === EFEITO PARALLAX SUAVE NO HERO ===
+window.addEventListener('scroll', () => {
+  const heroBg = document.querySelector('.hero-bg');
+  if (heroBg && window.scrollY < window.innerHeight) {
+    heroBg.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+  }
 });
