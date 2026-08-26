@@ -24,6 +24,7 @@
         <li><a href="#inicio" class="nav-link">Início</a></li>
         <li><a href="#beneficios" class="nav-link">Benefícios</a></li>
         <li><a href="#servicos" class="nav-link">Serviços</a></li>
+        <li><a href="#planos" class="nav-link">Planos</a></li>
         <li><a href="#faq" class="nav-link">FAQ</a></li>
         <li><a href="#contato" class="nav-link">Contato</a></li>
       </ul>
@@ -155,6 +156,66 @@
     </div>
   </section>
 
+  <!-- PLANOS -->
+  <section class="planos" id="planos">
+    <div class="container">
+      <h2 class="section-title">Planos e Investimento<span class="linha-dourada"></span></h2>
+      <p class="section-sub">Escolha o plano ideal para o seu negócio</p>
+      <div class="planos-grid">
+
+        <div class="plano-card reveal">
+          <div class="plano-nome">Básico</div>
+          <div class="plano-preco">R$ <span>497</span></div>
+          <div class="plano-prazo">Entrega em até 3 dias</div>
+          <ul class="plano-lista">
+            <li><i class="fa-solid fa-check"></i> Landing page de 1 página</li>
+            <li><i class="fa-solid fa-check"></i> Design responsivo (celular)</li>
+            <li><i class="fa-solid fa-check"></i> Botão WhatsApp integrado</li>
+            <li><i class="fa-solid fa-check"></i> Publicação online</li>
+            <li><i class="fa-solid fa-check"></i> 1 revisão incluída</li>
+            <li class="off"><i class="fa-solid fa-xmark"></i> SEO avançado</li>
+            <li class="off"><i class="fa-solid fa-xmark"></i> Formulário de contato</li>
+          </ul>
+          <a href="https://wa.me/5567991077340?text=Olá%20Alana!%20Tenho%20interesse%20no%20Plano%20Básico." target="_blank" rel="noopener" class="btn-plano">Quero este plano</a>
+        </div>
+
+        <div class="plano-card plano-destaque reveal">
+          <div class="plano-badge">Mais popular</div>
+          <div class="plano-nome">Intermediário</div>
+          <div class="plano-preco">R$ <span>897</span></div>
+          <div class="plano-prazo">Entrega em até 5 dias</div>
+          <ul class="plano-lista">
+            <li><i class="fa-solid fa-check"></i> Site com até 3 páginas</li>
+            <li><i class="fa-solid fa-check"></i> Design responsivo (celular)</li>
+            <li><i class="fa-solid fa-check"></i> Botão WhatsApp integrado</li>
+            <li><i class="fa-solid fa-check"></i> Publicação online</li>
+            <li><i class="fa-solid fa-check"></i> SEO básico (Google)</li>
+            <li><i class="fa-solid fa-check"></i> Formulário de contato</li>
+            <li><i class="fa-solid fa-check"></i> 2 revisões incluídas</li>
+          </ul>
+          <a href="https://wa.me/5567991077340?text=Olá%20Alana!%20Tenho%20interesse%20no%20Plano%20Intermediário." target="_blank" rel="noopener" class="btn-plano">Quero este plano</a>
+        </div>
+
+        <div class="plano-card reveal">
+          <div class="plano-nome">Premium</div>
+          <div class="plano-preco">R$ <span>1.497</span></div>
+          <div class="plano-prazo">Entrega em até 7 dias</div>
+          <ul class="plano-lista">
+            <li><i class="fa-solid fa-check"></i> Site completo (até 6 páginas)</li>
+            <li><i class="fa-solid fa-check"></i> Design responsivo (celular)</li>
+            <li><i class="fa-solid fa-check"></i> Botão WhatsApp integrado</li>
+            <li><i class="fa-solid fa-check"></i> Publicação online</li>
+            <li><i class="fa-solid fa-check"></i> SEO avançado (Google)</li>
+            <li><i class="fa-solid fa-check"></i> Formulário de contato</li>
+            <li><i class="fa-solid fa-check"></i> Revisões ilimitadas</li>
+          </ul>
+          <a href="https://wa.me/5567991077340?text=Olá%20Alana!%20Tenho%20interesse%20no%20Plano%20Premium." target="_blank" rel="noopener" class="btn-plano">Quero este plano</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="faq" id="faq">
     <div class="container">
@@ -211,16 +272,61 @@
 
   <!-- CONTATO -->
   <section class="contato" id="contato">
-    <div class="container contato-inner">
+    <div class="container">
       <h2 class="section-title">Vamos conversar?<span class="linha-dourada"></span></h2>
-      <p class="contato-sub">Entre em contato e solicite um orçamento sem compromisso.</p>
-      <a href="https://wa.me/5567991077340" target="_blank" rel="noopener" class="btn-whatsapp btn-whatsapp--grande">
-        <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
-      </a>
-      <a href="tel:+5567991077340" class="telefone-link">
-        <i class="fa-solid fa-phone"></i> (67) 99107-7340
-      </a>
-      <p class="localizacao"><i class="fa-solid fa-location-dot"></i> Campo Grande, MS</p>
+      <p class="section-sub">Preencha o formulário e receba um orçamento sem compromisso.</p>
+      <div class="contato-grid">
+        <form class="contato-form reveal" id="formContato">
+          <div class="form-grupo">
+            <label>Seu nome</label>
+            <input type="text" id="nome" placeholder="Como posso te chamar?" required />
+          </div>
+          <div class="form-grupo">
+            <label>WhatsApp</label>
+            <input type="tel" id="whatsapp" placeholder="(67) 99999-9999" required />
+          </div>
+          <div class="form-grupo">
+            <label>Tipo de site</label>
+            <select id="tipoSite">
+              <option value="">Selecione...</option>
+              <option value="Landing Page">Landing Page</option>
+              <option value="Site Institucional">Site Institucional</option>
+              <option value="Site para Negócio Local">Site para Negócio Local</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-grupo">
+            <label>Mensagem (opcional)</label>
+            <textarea id="mensagem" placeholder="Conte um pouco sobre seu negócio..." rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn-whatsapp btn-whatsapp--grande" style="width:100%;justify-content:center;">
+            <i class="fa-brands fa-whatsapp"></i> Enviar pelo WhatsApp
+          </button>
+        </form>
+        <div class="contato-info reveal">
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Telefone / WhatsApp</strong>
+              <a href="tel:+5567991077340">(67) 99107-7340</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-brands fa-instagram"></i>
+            <div>
+              <strong>Instagram</strong>
+              <a href="https://instagram.com/alanatech_" target="_blank" rel="noopener">@alanatech_</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Localização</strong>
+              <span>Campo Grande, MS</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

@@ -153,6 +153,21 @@ document.querySelectorAll('.faq-pergunta').forEach(btn => {
   });
 });
 
+// === FORMULÁRIO → WHATSAPP ===
+const form = document.getElementById('formContato');
+if (form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value.trim();
+    const whatsapp = document.getElementById('whatsapp').value.trim();
+    const tipo = document.getElementById('tipoSite').value;
+    const msg = document.getElementById('mensagem').value.trim();
+
+    const texto = `Olá Alana! 👋\n\n*Nome:* ${nome}\n*WhatsApp:* ${whatsapp}\n*Tipo de site:* ${tipo || 'Não informado'}\n*Mensagem:* ${msg || 'Nenhuma mensagem adicional'}\n\nGostaria de saber mais sobre os seus serviços!`;
+    window.open(`https://wa.me/5567991077340?text=${encodeURIComponent(texto)}`, '_blank');
+  });
+}
+
 // === EFEITO PARALLAX SUAVE NO HERO ===
 window.addEventListener('scroll', () => {
   const heroBg = document.querySelector('.hero-bg');

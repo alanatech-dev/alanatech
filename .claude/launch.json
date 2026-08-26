@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lash-site",
+      "runtimeExecutable": "powershell.exe",
+      "runtimeArgs": ["-NoProfile", "-Command", "& { $l = [System.Net.HttpListener]::new(); $l.Prefixes.Add('http://localhost:3333/'); $l.Start(); while($l.IsListening){ $ctx=$l.GetContext(); $req=$ctx.Request; $res=$ctx.Response; $path=Join-Path (Get-Location) ($req.Url.LocalPath.TrimStart('/')); if($path -eq (Join-Path (Get-Location) '')){$path=Join-Path (Get-Location) 'index.html'}; if(Test-Path $path -PathType Leaf){$b=[System.IO.File]::ReadAllBytes($path); $res.ContentLength64=$b.Length; $res.OutputStream.Write($b,0,$b.Length)}else{$res.StatusCode=404}; $res.OutputStream.Close() } }"],
+      "port": 3333
+    }
+  ]
+}
