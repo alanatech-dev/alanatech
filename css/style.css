@@ -162,6 +162,7 @@ img { max-width: 100%; display: block; }
   background: var(--fundo);
   display: flex; flex-direction: column;
   align-items: center;
+  padding-top: 64px;
 }
 .hero-img {
   width: 100%;
