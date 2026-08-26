@@ -173,6 +173,16 @@ img { max-width: 100%; display: block; }
   height: auto;
   display: block;
 }
+.hero-glow-slogan {
+  position: absolute;
+  bottom: 18%; left: 50%;
+  transform: translateX(-50%);
+  width: 70%; height: 60px;
+  background: radial-gradient(ellipse at center, rgba(207,168,130,0.45) 0%, transparent 70%);
+  filter: blur(8px);
+  animation: brilho-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
 .hero-img-wrap::after {
   content: '';
   position: absolute; inset: 0;
