@@ -81,9 +81,11 @@ if (foguete && fogueteSecao) {
       animado = true;
       fogueteObs.disconnect();
 
-      // Sobe ao longo do gráfico
+      // Para o float idle e sobe ao longo do gráfico
       setTimeout(() => {
+        foguete.classList.add('subindo');
         foguete.style.bottom = '88%';
+        foguete.style.transform = 'translateX(-50%)';
       }, 300);
 
       // Depois de subir, voa para fora
@@ -174,11 +176,12 @@ const form = document.getElementById('formContato');
 if (form) {
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const nome     = document.getElementById('nome').value.trim();
-    const whats    = document.getElementById('whatsapp').value.trim();
-    const tipo     = document.getElementById('tipoSite').value;
-    const msg      = document.getElementById('mensagem').value.trim();
-    const texto    = `Olá Alana! 👋\n\n*Nome:* ${nome}\n*WhatsApp:* ${whats}\n*Tipo de site:* ${tipo || 'Não informado'}\n*Mensagem:* ${msg || 'Nenhuma mensagem adicional'}\n\nGostaria de um orçamento!`;
+    const nome    = document.getElementById('nome').value.trim();
+    const whats   = document.getElementById('whatsapp').value.trim();
+    const empresa = document.getElementById('empresa').value.trim();
+    const tipo    = document.getElementById('tipoSite').value;
+    const msg     = document.getElementById('mensagem').value.trim();
+    const texto   = `Olá Alana! 👋\n\n*Nome:* ${nome}\n*WhatsApp:* ${whats}\n*Empresa/Serviço:* ${empresa || 'Não informado'}\n*Tipo de site:* ${tipo || 'Não informado'}\n*Mensagem:* ${msg || 'Nenhuma mensagem adicional'}\n\nGostaria de um orçamento!`;
     window.open(`https://wa.me/5567991077340?text=${encodeURIComponent(texto)}`, '_blank');
   });
 }
