@@ -157,19 +157,34 @@ button { border: none; cursor: pointer; background: none; }
 
 /* ── HERO ── */
 .hero {
-  position: relative; height: 100vh; min-height: 600px;
+  position: relative;
+  height: 100svh;           /* svh = unidade que exclui a barra do navegador mobile */
+  min-height: 560px;
   display: flex; flex-direction: column; overflow: hidden;
 }
 .hero-img-wrap { position: absolute; inset: 0; }
 .hero-img {
   width: 100%; height: 100%;
-  object-fit: cover; object-position: center top;
+  object-fit: cover;
+  object-position: center center;  /* centralizado em todos os tamanhos */
   transform-origin: center;
   animation: heroZoom 18s ease-in-out infinite alternate;
 }
 @keyframes heroZoom {
   from { transform: scale(1); }
   to   { transform: scale(1.06); }
+}
+
+/* Ajustes responsivos do hero */
+@media (max-width: 768px) {
+  .hero { height: 100svh; min-height: 500px; }
+  .hero-img { object-position: center center; }
+  .hero-glow-titulo { width: 90vw; }
+  .hero-glow-slogan { width: 80vw; }
+}
+@media (max-width: 480px) {
+  .hero { min-height: 480px; }
+  .hero-bottom { padding-bottom: 28px; }
 }
 .hero-vignette {
   position: absolute; inset: 0;
