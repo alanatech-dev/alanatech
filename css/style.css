@@ -180,17 +180,30 @@ button { border: none; cursor: pointer; background: none; }
 
 /* ── HERO MOBILE ── */
 @media (max-width: 768px) {
-  .hero { height: 100svh; min-height: 500px; }
+  .hero { height: 100svh; min-height: 600px; }
 
-  /* Esconde a tag <img> e usa background-image para controle total */
   .hero-img { display: none; }
+
+  /* cover + vinheta roxa nas 4 bordas → imagem preenche tela, bordas sangram de forma elegante */
   .hero-img-wrap {
-    /* 100% auto: escala a largura para 100% da tela, altura proporcional = zero corte, zero barras */
-    background: url('../img1.jpg') center 35% / 100% auto no-repeat var(--fundo);
+    background: url('../img1.jpg') center 30% / cover no-repeat var(--fundo);
+  }
+  .hero-img-wrap::before {
+    content: '';
+    position: absolute; inset: 0; z-index: 1;
+    background:
+      /* vinheta lateral esquerda */
+      linear-gradient(to right,  var(--fundo) 0%, transparent 35%),
+      /* vinheta lateral direita */
+      linear-gradient(to left,   var(--fundo) 0%, transparent 35%),
+      /* vinheta topo */
+      linear-gradient(to bottom, var(--fundo) 0%, transparent 30%),
+      /* vinheta base */
+      linear-gradient(to top,    var(--fundo) 0%, transparent 30%);
   }
 
-  .hero-glow-titulo { width: 90vw; }
-  .hero-glow-slogan { width: 80vw; }
+  .hero-glow-titulo { width: 88vw; }
+  .hero-glow-slogan { width: 82vw; }
 }
 @media (max-width: 480px) {
   .hero { min-height: 480px; }
