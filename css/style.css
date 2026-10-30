@@ -162,11 +162,14 @@ button { border: none; cursor: pointer; background: none; }
   min-height: 560px;
   display: flex; flex-direction: column; overflow: hidden;
 }
-.hero-img-wrap { position: absolute; inset: 0; }
+.hero-img-wrap {
+  position: absolute; inset: 0;
+  background: var(--fundo);        /* fundo roxo escuro enquanto a imagem carrega */
+}
 .hero-img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center center;  /* centralizado em todos os tamanhos */
+  object-position: center center;
   transform-origin: center;
   animation: heroZoom 18s ease-in-out infinite alternate;
 }
@@ -175,10 +178,14 @@ button { border: none; cursor: pointer; background: none; }
   to   { transform: scale(1.06); }
 }
 
-/* Ajustes responsivos do hero */
+/* ── HERO MOBILE — mostra a imagem inteira ── */
 @media (max-width: 768px) {
   .hero { height: 100svh; min-height: 500px; }
-  .hero-img { object-position: center center; }
+  .hero-img {
+    object-fit: contain;           /* imagem inteira, sem corte */
+    object-position: center center;
+    animation: none;               /* sem zoom no mobile (evita corte nas bordas) */
+  }
   .hero-glow-titulo { width: 90vw; }
   .hero-glow-slogan { width: 80vw; }
 }
