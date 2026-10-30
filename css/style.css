@@ -181,11 +181,14 @@ button { border: none; cursor: pointer; background: none; }
 /* ── HERO MOBILE ── */
 @media (max-width: 768px) {
   .hero { height: 100svh; min-height: 500px; }
-  .hero-img {
-    object-fit: cover;             /* preenche a tela sem barras */
-    object-position: center center;
-    animation: none;
+
+  /* Esconde a tag <img> e usa background-image para controle total */
+  .hero-img { display: none; }
+  .hero-img-wrap {
+    /* 100% auto: escala a largura para 100% da tela, altura proporcional = zero corte, zero barras */
+    background: url('../img1.jpg') center 35% / 100% auto no-repeat var(--fundo);
   }
+
   .hero-glow-titulo { width: 90vw; }
   .hero-glow-slogan { width: 80vw; }
 }
