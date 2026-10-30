@@ -178,13 +178,13 @@ button { border: none; cursor: pointer; background: none; }
   to   { transform: scale(1.06); }
 }
 
-/* ── HERO MOBILE — mostra a imagem inteira ── */
+/* ── HERO MOBILE ── */
 @media (max-width: 768px) {
   .hero { height: 100svh; min-height: 500px; }
   .hero-img {
-    object-fit: contain;           /* imagem inteira, sem corte */
+    object-fit: cover;             /* preenche a tela sem barras */
     object-position: center center;
-    animation: none;               /* sem zoom no mobile (evita corte nas bordas) */
+    animation: none;
   }
   .hero-glow-titulo { width: 90vw; }
   .hero-glow-slogan { width: 80vw; }
