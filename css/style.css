@@ -324,8 +324,7 @@ button { border: none; cursor: pointer; background: none; }
 }
 .mockup-img {
   width: 100%; max-width: 540px; display: block;
-  mix-blend-mode: multiply;
-  filter: brightness(1.6) contrast(1.05);
+  filter: drop-shadow(0 0 30px rgba(124,58,237,.5));
 }
 @keyframes floatMockup {
   0%,100% { transform: translateY(0); box-shadow: 0 0 60px rgba(124,58,237,.35); }
