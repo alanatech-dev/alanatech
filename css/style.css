@@ -320,12 +320,11 @@ button { border: none; cursor: pointer; background: none; }
 }
 .sobre-mockup { display: flex; justify-content: center; }
 .mockup-frame {
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 0 60px rgba(124,58,237,.35), 0 0 120px rgba(124,58,237,.15);
   animation: floatMockup 5s ease-in-out infinite;
 }
-.mockup-img {
-  width: 100%; max-width: 540px; display: block;
-  filter: drop-shadow(0 0 30px rgba(124,58,237,.5));
-}
+.mockup-img { width: 100%; max-width: 460px; display: block; }
 @keyframes floatMockup {
   0%,100% { transform: translateY(0); box-shadow: 0 0 60px rgba(124,58,237,.35); }
   50%      { transform: translateY(-14px); box-shadow: 0 0 80px rgba(168,85,247,.5); }
