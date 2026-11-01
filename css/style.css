@@ -652,19 +652,47 @@ button { border: none; cursor: pointer; background: none; }
 
 /* ── RESPONSIVO ── */
 @media (max-width: 768px) {
-  .sobre-grid     { grid-template-columns: 1fr; gap: 40px; }
+  /* padding das seções */
+  .sobre, .novos-servicos, .beneficios, .planos, .faq, .contato { padding: 60px 0; }
+  .marmore   { padding: 60px 24px; }
+  .contador  { padding: 48px 24px; }
+  .section-sub { margin-bottom: 32px; font-size: .97rem; }
+
+  /* sobre */
+  .sobre-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+  .sobre-texto .linha-roxa { margin: 12px auto 20px; }
+  .mockup-img { max-width: 100%; }
+
+  /* foguete */
   .foguete-secao  { flex-direction: column; padding: 60px 24px; gap: 40px; }
   .foguete-wrap   { max-width: 100%; }
-  .contato-grid   { grid-template-columns: 1fr; gap: 40px; }
-  .lavanda-wrap   { right: 2%; }
-  .footer-bottom  { padding: 20px 24px; }
+  .foguete-texto h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); text-align: center; }
+  .foguete-texto p  { text-align: center; }
+
+  /* contato */
+  .contato-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  /* planos */
   .planos-grid    { grid-template-columns: 1fr; }
   .plano-destaque { transform: none; }
   .plano-destaque:hover { transform: translateY(-6px); }
+
+  /* footer */
+  .footer-topo       { padding: 40px 20px; gap: 32px; }
+  .footer-banner-wrap{ max-width: 100%; }
+  .footer-links-wrap { gap: 24px; }
+  .footer-bottom     { padding: 16px 20px; flex-direction: column; text-align: center; }
+
+  .lavanda-wrap { right: 2%; }
 }
 @media (max-width: 480px) {
+  .novos-grid { grid-template-columns: 1fr; }
+  .ben-grid   { grid-template-columns: 1fr; }
+  .cards      { grid-template-columns: 1fr; }
+
   .hero-btns { flex-direction: column; align-items: center; }
   .btn-whatsapp, .btn-outline { width: 100%; max-width: 300px; justify-content: center; }
+
   .lavanda-wrap { display: none; }
   .foguete-lateral { width: 34px; right: 8px; }
   .whatsapp-float { right: 16px; bottom: 20px; width: 52px; height: 52px; }
