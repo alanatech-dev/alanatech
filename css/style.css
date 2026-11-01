@@ -196,7 +196,7 @@ button { border: none; cursor: pointer; background: none; }
 /* ── HERO MOBILE ── */
 @media (max-width: 768px) {
   .hero { height: 100svh; min-height: 500px; }
-  .hero-img { object-position: center 35%; }
+  .hero-img { object-fit: contain; object-position: center center; }
   .hero-bottom { padding-bottom: 28px; }
 }
 .scroll-down {
