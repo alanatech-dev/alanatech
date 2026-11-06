@@ -174,7 +174,9 @@ button { border: none; cursor: pointer; background: none; }
 }
 .hero-vignette {
   position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(6,6,18,.25) 0%, transparent 45%, rgba(6,6,18,.75) 100%);
+  background:
+    linear-gradient(to bottom, rgba(6,6,18,.5) 0%, rgba(6,6,18,.35) 50%, rgba(6,6,18,.65) 100%),
+    radial-gradient(ellipse 70% 60% at 50% 50%, transparent 40%, rgba(6,6,18,.5) 100%);
 }
 .hero-particles { position: absolute; inset: 0; pointer-events: none; }
 .particula {
@@ -187,10 +189,12 @@ button { border: none; cursor: pointer; background: none; }
   50%      { transform: translateY(-30px) scale(1.2); opacity: .2; }
 }
 .hero-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0;
+  position: absolute; inset: 0;
   display: flex; flex-direction: column; align-items: center;
-  padding-bottom: 40px; gap: 20px; z-index: 2;
+  justify-content: center;
+  padding: 100px 24px 48px; gap: 0; z-index: 2;
 }
+.scroll-down { margin-top: auto; }
 .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
 /* frases hero */
@@ -204,11 +208,11 @@ button { border: none; cursor: pointer; background: none; }
   color: var(--roxo-clr); margin-bottom: 14px;
 }
 .hero-headline {
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 800; line-height: 1.15;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 800; line-height: 1.1;
   color: var(--texto);
-  margin: 0 0 16px;
-  text-shadow: 0 0 40px rgba(124,58,237,.4);
+  margin: 0 0 20px;
+  text-shadow: 0 0 60px rgba(124,58,237,.5), 0 2px 20px rgba(0,0,0,.4);
 }
 .hero-headline .roxo-txt {
   background: linear-gradient(90deg, var(--roxo-clr), var(--brilho));
@@ -216,10 +220,10 @@ button { border: none; cursor: pointer; background: none; }
   background-clip: text;
 }
 .hero-sub {
-  font-size: clamp(.9rem, 2vw, 1.05rem);
-  color: var(--texto-sub); line-height: 1.65;
-  margin: 0 0 28px;
-  max-width: 520px;
+  font-size: clamp(.95rem, 1.8vw, 1.15rem);
+  color: var(--texto-sub); line-height: 1.7;
+  margin: 0 0 36px;
+  max-width: 560px;
 }
 
 /* ── HERO MOBILE ── */
