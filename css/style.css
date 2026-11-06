@@ -158,27 +158,22 @@ button { border: none; cursor: pointer; background: none; }
 /* ── HERO ── */
 .hero {
   position: relative;
-  height: 100svh; min-height: 560px;
-  display: flex; flex-direction: column; overflow: hidden;
+  min-height: 100svh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  background: var(--fundo);
+  overflow: hidden;
+  padding: 100px 0 64px;
 }
-.hero-img-wrap { position: absolute; inset: 0; background: var(--fundo); }
-.hero-img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-  animation: heroZoom 18s ease-in-out infinite alternate;
+.hero-bg-glow {
+  position: absolute;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(124,58,237,.18) 0%, transparent 68%);
+  top: 50%; left: 38%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
-@keyframes heroZoom {
-  from { transform: scale(1); }
-  to   { transform: scale(1.04); }
-}
-.hero-vignette {
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(to bottom, rgba(6,6,18,.5) 0%, rgba(6,6,18,.35) 50%, rgba(6,6,18,.65) 100%),
-    radial-gradient(ellipse 70% 60% at 50% 50%, transparent 40%, rgba(6,6,18,.5) 100%);
-}
-.hero-particles { position: absolute; inset: 0; pointer-events: none; }
+.hero-particles { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
 .particula {
   position: absolute; border-radius: 50%;
   background: var(--roxo-clr);
@@ -188,14 +183,34 @@ button { border: none; cursor: pointer; background: none; }
   0%,100% { transform: translateY(0) scale(1); opacity: .7; }
   50%      { transform: translateY(-30px) scale(1.2); opacity: .2; }
 }
-.hero-bottom {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center;
-  padding: 100px 24px 48px; gap: 0; z-index: 2;
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 60px;
+  z-index: 2;
 }
-.scroll-down { margin-top: auto; }
-.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.hero-content { display: flex; flex-direction: column; gap: 0; }
+.hero-visual { display: flex; justify-content: center; align-items: center; }
+.hero-mockup {
+  width: 100%; max-width: 560px;
+  border-radius: 18px;
+  box-shadow:
+    0 0 0 1px var(--borda),
+    0 0 80px rgba(124,58,237,.35),
+    0 24px 60px rgba(0,0,0,.55);
+  animation: floatMockup 5s ease-in-out infinite;
+  transform: perspective(1000px) rotateY(-4deg);
+}
+.scroll-down {
+  position: absolute; bottom: 32px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
 
 /* frases hero */
 .hero-text {
@@ -228,30 +243,38 @@ button { border: none; cursor: pointer; background: none; }
 
 /* ── HERO MOBILE ── */
 @media (max-width: 768px) {
-  .hero { height: auto; min-height: unset; }
-  .hero-img-wrap { position: relative; inset: unset; }
-  .hero-img {
-    width: 100%; height: auto;
-    object-fit: contain;
-    object-position: center top;
+  .hero {
+    min-height: unset; height: auto;
+    padding: 0 0 48px;
+    justify-content: flex-start;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 0; padding: 0;
+  }
+  .hero-visual { order: -1; }
+  .hero-mockup {
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
     animation: none;
+    max-width: 100%; width: 100%;
+    object-fit: contain;
   }
-  .hero-vignette {
-    position: absolute;
-    top: unset; bottom: 0; left: 0; right: 0;
-    height: 80px;
-    background: linear-gradient(to bottom, transparent 0%, rgba(6,6,18,.95) 100%);
-  }
-  .hero-bottom {
-    position: relative;
-    bottom: unset; left: unset; right: unset;
-    padding: 20px 24px 36px;
-    background: var(--fundo);
-  }
+  .hero-bg-glow { display: none; }
   .hero-particles { display: none; }
-  .hero-text { padding: 0; }
-  .hero-sub   { margin-left: auto; margin-right: auto; }
+  .hero-content {
+    padding: 20px 24px 0;
+    text-align: center;
+    align-items: center;
+  }
+  .hero-sub { margin-left: auto; margin-right: auto; }
   .hero-headline { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+  .hero-btns { justify-content: center; }
+  .scroll-down {
+    position: relative; bottom: unset; left: unset;
+    transform: none; margin-top: 16px;
+  }
 }
 .scroll-down {
   color: var(--brilho); font-size: 1.1rem;
