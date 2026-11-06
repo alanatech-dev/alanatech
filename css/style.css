@@ -195,9 +195,27 @@ button { border: none; cursor: pointer; background: none; }
 
 /* ── HERO MOBILE ── */
 @media (max-width: 768px) {
-  .hero { height: 100svh; min-height: 500px; }
-  .hero-img { object-fit: contain; object-position: center center; }
-  .hero-bottom { padding-bottom: 28px; }
+  .hero { height: auto; min-height: unset; }
+  .hero-img-wrap { position: relative; inset: unset; }
+  .hero-img {
+    width: 100%; height: auto;
+    object-fit: contain;
+    object-position: center top;
+    animation: none;
+  }
+  .hero-vignette {
+    position: absolute;
+    top: unset; bottom: 0; left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(6,6,18,.95) 100%);
+  }
+  .hero-bottom {
+    position: relative;
+    bottom: unset; left: unset; right: unset;
+    padding: 20px 24px 36px;
+    background: var(--fundo);
+  }
+  .hero-particles { display: none; }
 }
 .scroll-down {
   color: var(--brilho); font-size: 1.1rem;
