@@ -193,6 +193,35 @@ button { border: none; cursor: pointer; background: none; }
 }
 .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 
+/* frases hero */
+.hero-text {
+  text-align: center;
+  padding: 0 24px;
+}
+.hero-tag-small {
+  display: inline-block;
+  font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--roxo-clr); margin-bottom: 14px;
+}
+.hero-headline {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800; line-height: 1.15;
+  color: var(--texto);
+  margin: 0 0 16px;
+  text-shadow: 0 0 40px rgba(124,58,237,.4);
+}
+.hero-headline .roxo-txt {
+  background: linear-gradient(90deg, var(--roxo-clr), var(--brilho));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(.9rem, 2vw, 1.05rem);
+  color: var(--texto-sub); line-height: 1.65;
+  margin: 0 0 28px;
+  max-width: 520px;
+}
+
 /* ── HERO MOBILE ── */
 @media (max-width: 768px) {
   .hero { height: auto; min-height: unset; }
@@ -216,6 +245,9 @@ button { border: none; cursor: pointer; background: none; }
     background: var(--fundo);
   }
   .hero-particles { display: none; }
+  .hero-text { padding: 0; }
+  .hero-sub   { margin-left: auto; margin-right: auto; }
+  .hero-headline { font-size: clamp(1.6rem, 7vw, 2.4rem); }
 }
 .scroll-down {
   color: var(--brilho); font-size: 1.1rem;
